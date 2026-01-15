@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+
+<Category name="SS-MIX2" base="2.5">
+
+<MessageType name='ADT_A01' structure='ADT_A01' returntype='base:ACK_A01' description='患者管理 -入院 /来院通知  入院実施やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A02' structure='ADT_A02' returntype='base:ACK_A02' description='患者管理 -患者転送  転棟・転科（転室・転床）実施やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A03' structure='ADT_A03' returntype='base:ACK_A03' description='患者管理 -退院 /来院終了  退院実施やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A04' structure='ADT_A01' returntype='base:ACK_A04' description='患者管理 -患者登録  外来診察予定の患者を受付けた情報を送信するメッセージ。'/>
+<MessageType name='ADT_A08' structure='ADT_A01' returntype='base:ACK_A08' description='患者管理 -患者情報の更新  患者の最新の情報送信するメッセージ。 患者プロフィール（氏名・性別・生年月日・住所等の基本情報、感染症や血液型情報）・保険情報で登録・修正・取消が発生したときに送信するメッセージ'/>
+<MessageType name='ADT_A11' structure='ADT_A09' returntype='base:ACK_A11' description='患者管理 -入院 /来院通知の取消  入院実施の取消情報送信するメッセージ。'/>
+<MessageType name='ADT_A12' structure='ADT_A09' returntype='base:ACK_A12' description='患者管理 -転送の取消  転棟・転科（転室・転床）実施の取消情報送信するメッセージ。'/>
+<MessageType name='ADT_A13' structure='ADT_A01' returntype='base:ACK_A13' description='患者管理 -退院 /来院終了の取消  退院実施の取消情報送信するメッセージ。'/>
+<MessageType name='ADT_A14' structure='ADT_A05' returntype='base:ACK_A14' description='患者管理 -入院保留  入院予定やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A15' structure='ADT_A15' returntype='base:ACK_A15' description='患者管理 -転送保留  転棟・転科（転室・転床）予定やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A16' structure='ADT_A16' returntype='base:ACK_A16' description='患者管理 -退院保留  退院予定やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A21' structure='ADT_A21' returntype='base:ACK_A21' description='患者管理 -許可外出による外出  外出泊実施やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A22' structure='ADT_A21' returntype='base:ACK_A22' description='患者管理 -許可外出からの帰院  外出泊帰院実施やその修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A23' structure='ADT_A21' returntype='base:ACK_A23' description='患者管理 -患者記録の削除  患者そのものが、医療情報システム（HIS）より論理・物理削除された時に送信するメッセージ。'/>
+<MessageType name='ADT_A25' structure='ADT_A21' returntype='base:ACK_A25' description='患者管理 -退院保留の取消  退院予定の取消情報を送信するメッセージ。'/>
+<MessageType name='ADT_A26' structure='ADT_A21' returntype='base:ACK_A26' description='患者管理 -転送保留の取消  転棟・転科（転室・転床）予定の取消情報を送信するメッセージ。'/>
+<MessageType name='ADT_A27' structure='ADT_A21' returntype='base:ACK_A27' description='患者管理 -入院保留の取消  入院予定の取消情報を送信するメッセージ。'/>
+<MessageType name='ADT_A52' structure='ADT_A52' returntype='base:ACK_A52' description='患者管理 -許可外出の取消  外出泊実施の取消情報を送信するメッセージ。'/>
+<MessageType name='ADT_A53' structure='ADT_A52' returntype='base:ACK_A53' description='患者管理 -許可外出からの帰院の取消  外出泊帰院実施の取消情報送信するメッセージ。'/>
+<MessageType name='ADT_A54' structure='ADT_A54' returntype='base:ACK_A54' description='患者管理 -担当医の変更  担当医の登録・修正情報を送信するメッセージ。'/>
+<MessageType name='ADT_A55' structure='ADT_A52' returntype='base:ACK_A55' description='患者管理 -担当医の変更の取消  担当医の取消情報を送信するメッセージ。'/>
+<MessageType name='ADT_A60' structure='ADT_A60' returntype='base:ACK_A60' description='患者管理 -アレルギー情報の更新  アレルギー・副作用の登録・修正情報を送信するメッセージ。  IAMセグメントでアレルギー情報を表現する。'/>
+<MessageType name='OMD_O03' structure='OMD_O03' description='食事オーダ  食事オーダの依頼・修正・取消情報を送信するメッセージ。'/>
+<MessageType name='OMG_O19' structure='OMG_O19' description='一般臨床オーダ（放射線検査オーダ、内視鏡検査オーダ、生理検査オーダ）  放射線検査オーダ、内視鏡検査オーダ、生理検査オーダの依頼・修正・取消情報を送信するメッセージ。放射線検査オーダ、内視鏡検査オーダの実施情報は、 OMI^Z23メッセージ、生理検査オーダの結果情報は ORU^R01メッセージを使用する。'/>
+<MessageType name='OMI_Z23' structure='OMI_Z23' description='イメージングオーダメッセージ（放射線検査または内視鏡検査の実施通知）  放射線検査または内視鏡検査の実施情報を送信するメッセ.ジ。'/>
+<MessageType name='OML_O33' structure='OML_O33' description='1検体に対する複数依頼の検体オーダ  検体検査オーダの依頼・修正・取消・受付・実施情報を送信するメッセージ。'/>
+<MessageType name='ORU_R01' structure='ORU_R01' returntype='base:ACK_R01' description='検査の非要求転送  検査の受付・実施・結果情報を送信するメッセージ。生理検査オーダの結果情報の報告に本メッセージを使用する。'/>
+<MessageType name='OUL_R22' structure='OUL_R22' description='非要求検体ベース検査結果メッセージ（検体検査結果の報告）  検体検査結果情報の報告を送信するメッセージ。'/>
+<MessageType name='PPR_ZD1' structure='PPR_ZD1' returntype='base:ACK_ZD1' description='患者ケア -プロブレム情報の通知  患者の病名（歴）の登録・修正・取消を送信するメッセージ。'/>
+<MessageType name='RAS_O17' structure='RAS_O17' description='薬剤（処方／注射）の実施情報  処方または注射の実施を報告するメッセージ。'/>
+<MessageType name='RDE_O11' structure='RDE_O11' description='薬剤（処方／注射）構造化オーダ  処方または注射オーダの依頼・修正・取消情報を送信するメッセージ。'/>
+
+<MessageStructure name='ADT_A01' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~[~{~base:NK1~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~{~base:AL1~}~]~[~{~base:DG1~}~]~[~base:DRG~]~[~{~base:PR1~[~{~base:ROL~}~]~}~]~[~{~base:GT1~}~]~[~{~base:IN1~[~base:IN2~]~[~{~base:IN3~}~]~[~{~base:ROL~}~]~}~]~[~base:ACC~]~[~base:UB1~]~[~base:UB2~]~[~base:PDA~]'/>
+<MessageStructure name='ADT_A02' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~base:PDA~]'/>
+<MessageStructure name='ADT_A03' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~[~{~base:NK1~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]~[~{~base:DB1~}~]~[~{~base:AL1~}~]~[~{~base:DG1~}~]~[~base:DRG~]~[~{~base:PR1~[~{~base:ROL~}~]~}~]~[~{~base:OBX~}~]~[~{~base:GT1~}~]~[~{~base:IN1~[~base:IN2~]~[~{~base:IN3~}~]~[~{~base:ROL~}~]~}~]~[~base:ACC~]~[~base:PDA~]'/>
+<MessageStructure name='ADT_A05' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~[~{~base:NK1~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~{~base:AL1~}~]~[~{~base:DG1~}~]~[~base:DRG~]~[~{~base:PR1~[~{~base:ROL~}~]~}~]~[~{~base:GT1~}~]~[~{~base:IN1~[~base:IN2~]~[~{~base:IN3~}~]~[~{~base:ROL~}~]~}~]~[~base:ACC~]~[~base:UB1~]~[~base:UB2~]'/>
+<MessageStructure name='ADT_A09' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~base:PV1~[~base:PV2~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~{~base:DG1~}~]'/>
+<MessageStructure name='ADT_A12' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~base:PV1~[~base:PV2~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~base:DG1~]'/>
+<MessageStructure name='ADT_A15' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~{~base:DG1~}~]'/>
+<MessageStructure name='ADT_A16' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~[~{~base:NK1~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]~[~{~base:AL1~}~]~[~{~base:DG1~}~]~[~base:DRG~]~[~{~base:PR1~[~{~base:ROL~}~]~}~]~[~{~base:GT1~}~]~[~{~base:IN1~[~base:IN2~]~[~{~base:IN3~}~]~[~{~base:ROL~}~]~}~]~[~base:ACC~]'/>
+<MessageStructure name='ADT_A21' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~base:PV1~[~base:PV2~]~[~{~base:DB1~}~]~[~{~base:OBX~}~]'/>
+<MessageStructure name='ADT_A52' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~base:PV1~[~base:PV2~]'/>
+<MessageStructure name='ADT_A54' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PD1~]~[~{~base:ROL~}~]~base:PV1~[~base:PV2~]~[~{~base:ROL~}~]'/>
+<MessageStructure name='ADT_A60' definition='base:MSH~[~{~base:SFT~}~]~base:EVN~base:PID~[~base:PV1~]~[~base:PV2~]~[~{~base:IAM~}~]'/>
+<MessageStructure name='OMD_O03' definition='base:MSH~[~{~base:SFT~}~]~[~{~base:NTE~}~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~base:PV1~[~base:PV2~]~]~[~{~base:IN1~[~base:IN2~]~[~base:IN3~]~}~]~[~base:GT1~]~[~{~base:AL1~}~]~]~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~[~{~base:ODS~}~[~{~base:NTE~}~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~]~}~[~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~{~base:ODT~}~[~{~base:NTE~}~]~}~]'/>
+<MessageStructure name='OMG_O19' definition='base:MSH~[~{~base:SFT~}~]~[~{~base:NTE~}~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~{~base:NK1~}~]~[~base:PV1~[~base:PV2~]~]~[~{~base:IN1~[~base:IN2~]~[~base:IN3~]~}~]~[~base:GT1~]~[~{~base:AL1~}~]~]~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~base:OBR~[~{~base:NTE~}~]~[~base:CTD~]~[~{~base:DG1~}~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~}'/>
+<MessageStructure name='OMI_Z23' definition='base:MSH~[~{~base:SFT~}~]~[~{~base:NTE~}~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~base:PV1~[~base:PV2~]~]~[~{~base:IN1~[~base:IN2~]~[~base:IN3~]~}~]~[~base:GT1~]~[~{~base:AL1~}~]~]~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~base:OBR~[~{~base:NTE~}~]~[~base:CTD~]~[~{~base:DG1~}~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~[~{~ZE1~[~{~base:OBX~}~]~[~{~ZE2~}~]~}~]~{~base:IPC~}~}'/>
+<MessageStructure name='OML_O33' definition='base:MSH~[~{~base:SFT~}~]~[~{~base:NTE~}~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~{~base:NK1~}~]~[~base:PV1~[~base:PV2~]~]~[~{~base:IN1~[~base:IN2~]~[~base:IN3~]~}~]~[~base:GT1~]~[~{~base:AL1~}~]~]~{~base:SPM~[~{~base:OBX~}~]~[~{~base:SAC~}~]~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~[~base:OBR~[~base:TCD~]~[~{~base:NTE~}~]~[~{~base:DG1~}~]~[~{~base:OBX~[~base:TCD~]~[~{~base:NTE~}~]~}~]~]~[~{~base:FT1~}~]~[~{~base:CTI~}~]~[~base:BLG~]~}~}'/>
+<MessageStructure name='ORU_R01' definition='base:MSH~[~{~base:SFT~}~]~{~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~{~base:NK1~}~]~[~base:PV1~[~base:PV2~]~]~]~{~[~base:ORC~]~base:OBR~[~{~base:NTE~}~]~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~[~base:CTD~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~[~{~base:FT1~}~]~[~{~base:CTI~}~]~[~{~base:SPM~[~{~base:OBX~}~]~}~]~}~}~[~base:DSC~]'/>
+<MessageStructure name='OUL_R22' definition='base:MSH~[~{~base:SFT~}~]~[~base:NTE~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~]~[~base:PV1~[~base:PV2~]~]~{~base:SPM~[~{~base:OBX~}~]~[~{~base:SAC~[~base:INV~]~}~]~{~base:OBR~[~base:ORC~]~[~{~base:NTE~}~]~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~[~{~base:OBX~[~base:TCD~]~[~{~base:SID~}~]~[~{~base:NTE~}~]~}~]~[~{~base:CTI~}~]~}~}~[~base:DSC~]'/>
+<MessageStructure name='PPR_ZD1' definition='base:MSH~[~{~base:SFT~}~]~base:PID~[~base:PV1~[~base:PV2~]~]~{~base:PRB~[~ZPR~]~[~{~base:NTE~}~]~[~{~base:VAR~}~]~[~{~base:ROL~[~{~base:VAR~}~]~}~]~[~{~base:PTH~[~{~base:VAR~}~]~}~]~[~{~ZI1~}~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~[~{~base:GOL~[~{~base:NTE~}~]~[~{~base:VAR~}~]~[~{~base:ROL~[~{~base:VAR~}~]~}~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~}~]~[~{~base:ORC~[~&lt;~base:OBR~|~Hxx~&gt;~[~{~base:NTE~}~]~[~{~base:VAR~}~]~[~{~base:OBX~[~{~base:NTE~}~]~[~{~base:VAR~}~]~}~]~]~}~]~}'/>
+<MessageStructure name='RAS_O17' definition='base:MSH~[~{~base:SFT~}~]~[~{~base:NTE~}~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~{~base:AL1~}~]~[~base:PV1~[~base:PV2~]~]~]~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~[~base:RXO~[~{~base:NTE~}~{~base:RXR~}~[~{~base:RXC~[~{~base:NTE~}~]~}~]~]~]~[~RXE~{~base:TQ1~[~{~base:TQ2~}~]~}~{~base:RXR~}~[~{~base:RXC~}~]~]~{~{~base:RXA~}~base:RXR~[~{~base:OBX~[~{~base:NTE~}~]~}~]~}~[~{~base:CTI~}~]~}'/>
+<MessageStructure name='RDE_O11' definition='base:MSH~[~{~base:SFT~}~]~[~{~base:NTE~}~]~[~base:PID~[~base:PD1~]~[~{~base:NTE~}~]~[~base:PV1~[~base:PV2~]~]~[~{~base:IN1~[~base:IN2~]~[~base:IN3~]~}~]~[~base:GT1~]~[~{~base:AL1~}~]~]~{~base:ORC~[~{~base:TQ1~[~{~base:TQ2~}~]~}~]~[~base:RXO~[~{~base:NTE~}~]~{~base:RXR~}~[~{~base:RXC~[~{~base:NTE~}~]~}~]~]~RXE~[~{~base:NTE~}~]~{~base:TQ1~[~{~base:TQ2~}~]~}~{~base:RXR~}~[~{~base:RXC~}~]~[~{~base:OBX~[~{~base:NTE~}~]~}~]~[~{~base:FT1~}~]~[~base:BLG~]~[~{~base:CTI~}~]~}'/>
+
+<SegmentStructure name='RXE' description='Pharmacy/Treatment Encoded Order'>
+    <SegmentSubStructure piece='1' description='Quantity/Timing' datatype='base:TQ' max_length='200' required='B' ifrepeating='0'/>
+    <SegmentSubStructure piece='2' description='Give Code' datatype='base:CE' symbol='!' max_length='250' required='R' ifrepeating='0' codetable='base:292'/>
+    <SegmentSubStructure piece='3' description='Give Amount - Minimum' datatype='NM' symbol='!' max_length='20' required='R' ifrepeating='0'/>
+    <SegmentSubStructure piece='4' description='Give Amount - Maximum' datatype='NM' max_length='20' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='5' description='Give Units' datatype='base:CE' symbol='!' max_length='250' required='R' ifrepeating='0'/>
+    <SegmentSubStructure piece='6' description='Give Dosage Form' datatype='base:CE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='7' description='Provider&apos;s Administration Instructions' datatype='base:CE' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='8' description='Deliver-To Location' datatype='base:LA1' max_length='200' required='B' ifrepeating='0'/>
+    <SegmentSubStructure piece='9' description='Substitution Status' datatype='base:ID' max_length='1' required='O' ifrepeating='0' codetable='base:167'/>
+    <SegmentSubStructure piece='10' description='Dispense Amount' datatype='NM' symbol='?' max_length='20' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='11' description='Dispense Units' datatype='base:CE' symbol='?' max_length='250' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='12' description='Number Of Refills' datatype='NM' max_length='3' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='13' description='Ordering Provider&apos;s DEA Number' datatype='base:XCN' symbol='&amp;' max_length='250' required='C' ifrepeating='1'/>
+    <SegmentSubStructure piece='14' description='Pharmacist/Treatment Supplier&apos;s Verifier ID' datatype='base:XCN' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='15' description='Prescription Number' datatype='base:ST' symbol='?' max_length='20' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='16' description='Number of Refills Remaining' datatype='NM' symbol='?' max_length='20' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='17' description='Number of Refills/Doses Dispensed' datatype='NM' symbol='?' max_length='20' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='18' description='D/T of Most Recent Refill or Dose Dispensed' datatype='base:TS' symbol='?' max_length='26' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='19' description='Total Daily Dose' datatype='base:CQ' symbol='?' max_length='10' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='20' description='Needs Human Review' datatype='base:ID' max_length='1' required='O' ifrepeating='0' codetable='base:136'/>
+    <SegmentSubStructure piece='21' description='Pharmacy/Treatment Supplier&apos;s Special Dispensing Instructions' datatype='base:CE' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='22' description='Give Per (Time Unit)' datatype='base:ST' symbol='?' max_length='20' required='C' ifrepeating='0'/>
+    <SegmentSubStructure piece='23' description='Give Rate Amount' datatype='base:ST' max_length='6' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='24' description='Give Rate Units' datatype='base:CE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='25' description='Give Strength' datatype='NM' max_length='20' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='26' description='Give Strength Units' datatype='base:CE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='27' description='Give Indication' datatype='base:CE' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='28' description='Dispense Package Size' datatype='NM' max_length='20' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='29' description='Dispense Package Size Unit' datatype='base:CE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='30' description='Dispense Package Method' datatype='base:ID' max_length='2' required='O' ifrepeating='0' codetable='base:321'/>
+    <SegmentSubStructure piece='31' description='Supplementary Code' datatype='base:CE' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='32' description='Original Order Date/Time' datatype='base:TS' max_length='26' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='33' description='Give Drug Strength Volume' datatype='NM' max_length='5' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='34' description='Give Drug Strength Volume Units' datatype='base:CWE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='35' description='Controlled Substance Schedule' datatype='base:CWE' max_length='60' required='O' ifrepeating='0' codetable='base:477'/>
+    <SegmentSubStructure piece='36' description='Formulary Status' datatype='base:ID' max_length='1' required='O' ifrepeating='0' codetable='base:478'/>
+    <SegmentSubStructure piece='37' description='Pharmaceutical Substance Alternative' datatype='base:CWE' symbol='*' max_length='60' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='38' description='Pharmacy of Most Recent Fill' datatype='base:CWE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='39' description='Initial Dispense Amount' datatype='NM' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='40' description='Dispensing Pharmacy' datatype='base:CWE' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='41' description='Dispensing Pharmacy Address' datatype='base:XAD' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='42' description='Deliver-to Patient Location' datatype='base:PL' max_length='80' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='43' description='Deliver-to Address' datatype='base:XAD' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='44' description='Pharmacy Order Type' datatype='base:ID' max_length='1' required='O' ifrepeating='0' codetable='base:480'/>
+</SegmentStructure>
+<SegmentStructure name='ZE1' description='実施情報セグメント'>
+    <SegmentSubStructure piece='1' description='セットID-ZE1' max_length='4' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='2' description='制御コード予定／実施' max_length='20' required='1' ifrepeating='0'/>
+    <SegmentSubStructure piece='3' description='手技' datatype='base:CWE' max_length='483' required='1' ifrepeating='0'/>
+    <SegmentSubStructure piece='4' description='手技回数' max_length='16' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='5' description='医事加算' datatype='base:CWE' max_length='483' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='6' description='医療従事者種別' datatype='base:JCC' max_length='292' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='7' description='医療従事者' datatype='base:XCN' symbol='*' max_length='3002' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='8' description='使用物品種別' max_length='20' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='9' description='使用物品' symbol='*' max_length='250' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='10' description='連絡先' datatype='base:XTN' max_length='850' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='11' description='実施フィールド' max_length='199' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='12' description='会計フィールド' max_length='199' required='0' ifrepeating='0'/>
+</SegmentStructure>
+<SegmentStructure name='ZE2' description='曝射情報セグメント'>
+    <SegmentSubStructure piece='1' description='セットID-ZE2' max_length='4' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='2' description='管電圧' datatype='base:CQ' max_length='500' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='3' description='管電流' datatype='base:CQ' max_length='500' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='4' description='距離' datatype='base:CQ' max_length='500' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='5' description='時間' datatype='base:CQ' max_length='500' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='6' description='回数' max_length='16' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='7' description='撮影フィールド' max_length='199' required='0' ifrepeating='0'/>
+</SegmentStructure>
+<SegmentStructure name='ZI1' description='保険セグメント'>
+    <SegmentSubStructure piece='1' description='セットID-ZI1' symbol='!' max_length='4' required='R' ifrepeating='0'/>
+    <SegmentSubStructure piece='2' description='保険プランID' datatype='base:CWE' symbol='!' max_length='250' required='R' ifrepeating='0' codetable='base:72'/>
+    <SegmentSubStructure piece='3' description='保険会社ID' datatype='base:CX' symbol='+' max_length='250' required='R' ifrepeating='1'/>
+    <SegmentSubStructure piece='4' description='保険会社名' datatype='base:XON' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='5' description='保険会社住所' datatype='base:XAD' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='6' description='保険会社連絡者' datatype='base:XPN' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='7' description='保険会社電話番号' datatype='base:XTN' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='8' description='グループ番号' max_length='12' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='9' description='グループ名' datatype='base:XON' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='10' description='被保険者グループ雇用者ID' datatype='base:CX' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='11' description='被保険者グループ雇用者名' datatype='base:XON' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='12' description='プラン有効日時' max_length='8' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='13' description='プラン失効日付' max_length='8' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='14' description='認定情報' datatype='base:AUI' max_length='239' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='15' description='プランタイプ' max_length='3' required='O' ifrepeating='0' codetable='base:86'/>
+    <SegmentSubStructure piece='16' description='被保険者名' datatype='base:XPN' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='17' description='患者と保険者の関係' datatype='base:CWE' max_length='250' required='O' ifrepeating='0' codetable='base:63'/>
+    <SegmentSubStructure piece='18' description='保険者生年月日' datatype='base:TS' max_length='26' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='19' description='保険者住所' datatype='base:XAD' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='20' description='給付金の配分' max_length='2' required='O' ifrepeating='0' codetable='base:135'/>
+    <SegmentSubStructure piece='21' description='給付金の調整' max_length='2' required='O' ifrepeating='0' codetable='base:173'/>
+    <SegmentSubStructure piece='22' description='給付金優先順位の調整' max_length='2' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='23' description='入会フラッグの通知' max_length='1' required='O' ifrepeating='0' codetable='base:136'/>
+    <SegmentSubStructure piece='24' description='入会日付の通知' max_length='8' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='25' description='有資格フラッグの報告' max_length='1' required='O' ifrepeating='0' codetable='base:136'/>
+    <SegmentSubStructure piece='26' description='有資格報告日付' max_length='8' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='27' description='情報コードの解放' max_length='2' required='O' ifrepeating='0' codetable='base:93'/>
+    <SegmentSubStructure piece='28' description='入会前認定書' max_length='15' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='29' description='確認日付/時刻' datatype='base:TS' max_length='26' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='30' description='確認者' datatype='base:XCN' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='31' description='同意コードのタイプ' max_length='2' required='O' ifrepeating='0' codetable='base:98'/>
+    <SegmentSubStructure piece='32' description='請求状況' max_length='2' required='O' ifrepeating='0' codetable='base:22'/>
+    <SegmentSubStructure piece='33' description='予約残日数' max_length='4' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='34' description='予約残日数前遅延' max_length='4' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='35' description='会社プランコード' max_length='8' required='O' ifrepeating='0' codetable='base:42'/>
+    <SegmentSubStructure piece='36' description='ポリシー番号' max_length='15' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='37' description='免責ポリシー' datatype='base:CP' max_length='12' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='38' description='限度額ポリシー' datatype='base:CP' max_length='12' required='B' ifrepeating='0'/>
+    <SegmentSubStructure piece='39' description='限度日数のポリシー' max_length='4' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='40' description='部屋代 － 半個室' datatype='base:CP' max_length='12' required='B' ifrepeating='0'/>
+    <SegmentSubStructure piece='41' description='部屋代 － 個室' datatype='base:CP' max_length='12' required='B' ifrepeating='0'/>
+    <SegmentSubStructure piece='42' description='被保険者雇用状態' datatype='base:CWE' max_length='250' required='O' ifrepeating='0' codetable='base:66'/>
+    <SegmentSubStructure piece='43' description='被保険者の管理上の性別' max_length='1' required='O' ifrepeating='0' codetable='base:1'/>
+    <SegmentSubStructure piece='44' description='保険者の従業員の住所' datatype='base:XAD' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='45' description='確認状態' max_length='2' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='46' description='前保険プラン' max_length='8' required='O' ifrepeating='0' codetable='base:72'/>
+    <SegmentSubStructure piece='47' description='保険範囲タイプ' max_length='3' required='O' ifrepeating='0' codetable='base:309'/>
+    <SegmentSubStructure piece='48' description='ハンディキャップ' max_length='2' required='O' ifrepeating='0' codetable='base:295'/>
+    <SegmentSubStructure piece='49' description='被保険者ID番号' datatype='base:CX' symbol='*' max_length='250' required='O' ifrepeating='1'/>
+    <SegmentSubStructure piece='50' description='署名コード' max_length='1' required='O' ifrepeating='0' codetable='base:535'/>
+    <SegmentSubStructure piece='51' description='署名コード日' max_length='8' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='52' description='被保険者出生地' max_length='250' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='53' description='VIP識別' max_length='2' required='O' ifrepeating='0' codetable='base:99'/>
+</SegmentStructure>
+<SegmentStructure name='ZPD' description='歯式拡張情報セグメント'>
+    <SegmentSubStructure piece='1' description='Set ID - ZPD' symbol='!' max_length='4' required='0' ifrepeating='0'/>
+    <SegmentSubStructure piece='2' description='歯式情報' datatype='base:CWE' max_length='250' required='0' ifrepeating='0'/>
+</SegmentStructure>
+<SegmentStructure name='ZPR' description='プロブレム拡張情報セグメント'>
+    <SegmentSubStructure piece='1' description='修飾語管理番号(接頭語)' datatype='base:CWE' symbol='*' max_length='250' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='2' description='病名管理番号' datatype='base:CWE' max_length='250' required='1' ifrepeating='0'/>
+    <SegmentSubStructure piece='3' description='修飾語管理番号(接尾語)' datatype='base:CWE' symbol='*' max_length='250' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='4' description='修飾語交換用コード(接頭語)' datatype='base:CWE' symbol='*' max_length='250' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='5' description='病名交換用コード' datatype='base:CWE' symbol='*' max_length='250' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='6' description='修飾語交換用コード(接尾語)' datatype='base:CWE' symbol='*' max_length='250' required='0' ifrepeating='1'/>
+    <SegmentSubStructure piece='7' description='コメント' max_length='199' required='0' ifrepeating='0'/>
+</SegmentStructure>
+
+<DataType name='NM' description='Numeric'>
+    <DataSubType piece='1' description='Numeric' max_length='20' required='O'/>
+</DataType>
+<DataType name='VID' description='Version Identifier'>
+    <DataSubType piece='1' description='Version ID' datatype='base:ID' codetable='base:104' max_length='5' required='O'/>
+    <DataSubType piece='2' description='Internationalization Code' datatype='base:CWE' codetable='base:399' max_length='483' required='O'/>
+    <DataSubType piece='3' description='International Version ID' datatype='base:CWE' max_length='483' required='O'/>
+</DataType>
+
+</Category>
