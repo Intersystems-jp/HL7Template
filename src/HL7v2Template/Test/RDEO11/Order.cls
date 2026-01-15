@@ -1,4 +1,4 @@
-Class HL7v2Template.Test.RDEO11.Order Extends HL7v2Template.RDEO11
+Class HL7v2Template.Test.RDEO11.Order Extends HL7v2Template.Test.RDEO11.Template
 {
 
 Property OrderControl As %String;
